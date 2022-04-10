@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "990480743614",
+    "project_id": "pancaranticket",
+    "storage_bucket": "pancaranticket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990480743614:android:eb56cb8a37a0d0e3df32ef",
+        "android_client_info": {
+          "package_name": "com.example.pancaranticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990480743614-rocul769b3ss7l11uls8sa03slss16ki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pancaranticket",
+            "certificate_hash": "7e5b7f501d4e29da56daa6525f99aff7150aac21"
+          }
+        },
+        {
+          "client_id": "990480743614-8iml7lvpt7fsl374g61ijls5v2e68jbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrkeHEPN4qTWNqOxwfA_1sUXvrq6r5h4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990480743614-8iml7lvpt7fsl374g61ijls5v2e68jbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
