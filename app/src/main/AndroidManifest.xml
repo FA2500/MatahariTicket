@@ -3,6 +3,7 @@
     package="com.example.pancaranticket">
 
     <uses-feature android:name="android.hardware.camera.ar" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
