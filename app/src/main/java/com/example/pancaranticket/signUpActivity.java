@@ -22,13 +22,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SignUpActivity extends AppCompatActivity {
+public class signUpActivity extends AppCompatActivity {
 
     EditText etFirstName, etUserName, etEmail, etPassword, etRepeatPassword;
     final int MIN_PASSWORD_LENGTH = 6;
 
     private FirebaseAuth mAuth;
-    userRegister userregister;
+    //userRegister userregister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
         if (validateInput()) {
 
             //Create object userRegister
-            userregister = new userRegister();
+            //userregister = new userRegister();
 
             // Input is valid, here send data to your server
             String firstName = etFirstName.getText().toString();
@@ -114,10 +114,10 @@ public class SignUpActivity extends AppCompatActivity {
             String repeatPassword = etRepeatPassword.getText().toString();
 
             //Set value to object
-            userregister.setFullName(firstName);
+            /*userregister.setFullName(firstName);
             userregister.setUserName(lastName);
             userregister.setEmail(email);
-            userregister.setPermission("User");
+            userregister.setPermission("User");*/
 
 
             Toast.makeText(this,"Register Success",Toast.LENGTH_SHORT).show();
@@ -128,17 +128,17 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 FirebaseDatabase database = FirebaseDatabase.getInstance("https://ict602-group-project-default-rtdb.asia-southeast1.firebasedatabase.app");
-                                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+                                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                                 String userID = currentFirebaseUser.getUid();
                                 Log.d("TEST", userID);
-                                DatabaseReference ref = database.getReference("register").child(userID) ; //nama table
+                                DatabaseReference ref = database.getReference("register").child(userID); //nama table
 
 
                                 //Firebase insert data
                                 ref.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        ref.setValue(userregister);
+                                         //ref.setValue(userregister);
                                         Log.d("ABC", "Firebase SUCCESS");
                                     }
 
@@ -153,21 +153,21 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 // Sign in success, update UI with the signed-in user's information
                                 //Log.d(TAG, "createUserWithEmail:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
+                                //FirebaseUser user = mAuth.getCurrentUser();
+                                Intent intent = new Intent(signUpActivity.this, loginActivity.class);
                                 startActivity(intent);
                                 //updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Log.w("TEST", "createUserWithEmail:failure", task.getException());
+                                //Log.w("TEST", "createUserWithEmail:failure", task.getException());
                                 //Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
                                 //Toast.LENGTH_SHORT).show();
                                 //updateUI(null);
                             }
                         }
-                    });
+                     });}
 
-        }
-    }
+       // }
+   // }
 
-}
+}}

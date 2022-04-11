@@ -16,6 +16,9 @@
         android:theme="@style/Theme.PancaranTicket"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".mainPage"
+            android:exported="false" />
+        <activity
             android:name=".signUpActivity"
             android:exported="false" />
         <activity

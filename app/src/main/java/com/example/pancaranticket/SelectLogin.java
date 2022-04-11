@@ -27,4 +27,16 @@ public class SelectLogin extends AppCompatActivity {
         Intent intent = new Intent(this, BillPlz.class);
         startActivity(intent);
     }
+
+    public void testRegister(View v)
+    {
+        Intent intent = new Intent(this, signUpActivity.class);
+        startActivity(intent);
+    }
+
+    public void testLogin(View v)
+    {
+        Intent intent = new Intent(this, loginActivity.class);
+        startActivity(intent);
+    }
 }

@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginActivity extends AppCompatActivity {
+public class loginActivity extends AppCompatActivity {
 
     EditText etEmail, etPassword;
     final int MIN_PASSWORD_LENGTH = 6;
@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(loginActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
                                 FirebaseDatabase db = FirebaseDatabase.getInstance("https://ict602-group-project-default-rtdb.asia-southeast1.firebasedatabase.app");
@@ -107,12 +107,12 @@ public class LoginActivity extends AppCompatActivity {
                                 DatabaseReference ref = db.getReference("register").child(userID);
 
                                 //test
-                                Intent intent = new Intent(LoginActivity.this,Drawer.class);
+                                Intent intent = new Intent(loginActivity.this,mainPage.class);
                                 startActivity(intent);
                                 //end data
                             }
                             else{
-                                Toast.makeText(LoginActivity.this,"Incorrect Email/Password",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(loginActivity.this,"Incorrect Email/Password",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void goToSignup(View v) {
 
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, signUpActivity.class);
         startActivity(intent);
     }
 
