@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pancaranticket">
 
-
     <uses-feature android:name="android.hardware.camera.ar" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PancaranTicket"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".signUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".loginActivity"
+            android:exported="false" />
         <activity
             android:name=".SelectLogin"
             android:exported="true">
@@ -27,8 +32,7 @@
         </activity>
         <activity
             android:name=".BillPlz"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -39,19 +43,20 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+
+        <activity
+            android:name=".ARDependencies.helloar.HelloArActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
-<activity
-            android:name="com.example.pancaranticket.ARDependencies.helloar.HelloArActivity"
-            android:configChanges="orientation|screenSize"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:screenOrientation="locked">
-
-        </activity>
-        <meta-data android:name="com.google.ar.core" android:value="required"/>
-
     </application>
+
 </manifest>
