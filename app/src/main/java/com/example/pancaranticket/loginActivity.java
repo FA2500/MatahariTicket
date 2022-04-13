@@ -106,6 +106,7 @@ public class loginActivity extends AppCompatActivity {
                                 String userID = currentFirebaseUser.getUid();
                                 DatabaseReference ref = db.getReference("register").child(userID);*/
 
+                                userInfo.setEmail(email);
                                 //test
                                 Intent intent = new Intent(loginActivity.this,mainPage.class);
                                 startActivity(intent);
