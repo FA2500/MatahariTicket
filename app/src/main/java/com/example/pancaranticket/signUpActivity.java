@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +23,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class signUpActivity extends AppCompatActivity {
 
@@ -107,8 +114,8 @@ public class signUpActivity extends AppCompatActivity {
             //userregister = new userRegister();
 
             // Input is valid, here send data to your server
-            String firstName = etFirstName.getText().toString();
-            String lastName = etUserName.getText().toString();
+            String fullname = etFirstName.getText().toString();
+            String username = etUserName.getText().toString();
             String email = etEmail.getText().toString();
             String password = etPassword.getText().toString();
             String repeatPassword = etRepeatPassword.getText().toString();
@@ -127,15 +134,15 @@ public class signUpActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                FirebaseDatabase database = FirebaseDatabase.getInstance("https://ict602-group-project-default-rtdb.asia-southeast1.firebasedatabase.app");
-                                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                                String userID = currentFirebaseUser.getUid();
-                                Log.d("TEST", userID);
-                                DatabaseReference ref = database.getReference("register").child(userID); //nama table
+                                //FirebaseDatabase database = FirebaseDatabase.getInstance("https://ict602-group-project-default-rtdb.asia-southeast1.firebasedatabase.app");
+                                //FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                //String userID = db.getUid();
+                                //Log.d("TEST", userID);
+                                //DatabaseReference ref = db.getReference("register").child(userID); //nama table
 
 
                                 //Firebase insert data
-                                ref.addValueEventListener(new ValueEventListener() {
+                                /*ref.addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                          //ref.setValue(userregister);
@@ -147,8 +154,31 @@ public class signUpActivity extends AppCompatActivity {
                                         //TO BE COMPLETE
                                         Log.w("ABCD", "FIREBASE FAILED");
                                     }
-                                });
+                                });*/
                                 //firebase insert data
+
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                Map<String,Object> user = new HashMap<>();
+                                user.put("fullname",fullname);
+                                user.put("username",username);
+                                user.put("email",email);
+                                user.put("role","user");
+
+                                db.collection("User")
+                                        .document(username)
+                                        .set(user)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void documentReference) {
+                                                Log.d("TEST","test");
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.d("ERROR","ERROR",e);
+                                            }
+                                        });
 
 
                                 // Sign in success, update UI with the signed-in user's information

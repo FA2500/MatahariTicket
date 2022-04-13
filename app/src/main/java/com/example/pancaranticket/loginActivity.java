@@ -100,11 +100,11 @@ public class loginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(loginActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
-                                FirebaseUser user = mAuth.getCurrentUser();
+                                /*FirebaseUser user = mAuth.getCurrentUser();
                                 FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
                                 FirebaseDatabase db = FirebaseDatabase.getInstance("https://ict602-group-project-default-rtdb.asia-southeast1.firebasedatabase.app");
                                 String userID = currentFirebaseUser.getUid();
-                                DatabaseReference ref = db.getReference("register").child(userID);
+                                DatabaseReference ref = db.getReference("register").child(userID);*/
 
                                 //test
                                 Intent intent = new Intent(loginActivity.this,mainPage.class);
