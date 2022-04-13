@@ -106,6 +106,7 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
     private GLSurfaceView surfaceView;
 
     private boolean installRequested;
+    private boolean spawned = false;
 
     private Session session;
     private final SnackbarHelper messageSnackbarHelper = new SnackbarHelper();
@@ -175,6 +176,10 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
         tapHelper = new TapHelper(this);
         Log.d("WASH DISH ", String.valueOf(tapHelper));
         surfaceView.setOnTouchListener(tapHelper);
+
+        //test
+        //ViewRenderable.builder()
+        //test
 
         // Set up renderer.
         render = new SampleRender(surfaceView, this, getAssets());
@@ -330,7 +335,12 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
     public void onSurfaceCreated(SampleRender render) {
         // Prepare the rendering objects. This involves reading shaders and 3D model files, so may throw
         // an IOException.
+
+
         try {
+            if(spawned)
+                return;
+
             planeRenderer = new PlaneRenderer(render);
             backgroundRenderer = new BackgroundRenderer(render);
             virtualSceneFramebuffer = new Framebuffer(render, /*width=*/ 1, /*height=*/ 1);
@@ -389,23 +399,26 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
             virtualObjectAlbedoTexture =
                     Texture.createFromAsset(
                             render,
-                            "models/pawn_albedo.png",
+                            "models/seat.jpg",
                             Texture.WrapMode.CLAMP_TO_EDGE,
                             Texture.ColorFormat.SRGB);
             virtualObjectAlbedoInstantPlacementTexture =
                     Texture.createFromAsset(
                             render,
-                            "models/pawn_albedo_instant_placement.png",
+                           // "models/pawn_albedo_instant_placement.png",
+                            "models/seat.jpg",
                             Texture.WrapMode.CLAMP_TO_EDGE,
                             Texture.ColorFormat.SRGB);
             Texture virtualObjectPbrTexture =
                     Texture.createFromAsset(
                             render,
-                            "models/pawn_roughness_metallic_ao.png",
+                           // "models/pawn_roughness_metallic_ao.png",
+                            "models/seat.jpg",
                             Texture.WrapMode.CLAMP_TO_EDGE,
                             Texture.ColorFormat.LINEAR);
 
-            virtualObjectMesh = Mesh.createFromAsset(render, "models/pawn.obj");
+            //virtualObjectMesh = Mesh.createFromAsset(render, "models/pawn.obj");
+            virtualObjectMesh = Mesh.createFromAsset(render, "models/bus pancaran matahari V5.obj");
             virtualObjectShader =
                     Shader.createFromAssets(
                             render,
@@ -422,6 +435,7 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
                             .setTexture("u_RoughnessMetallicAmbientOcclusionTexture", virtualObjectPbrTexture)
                             .setTexture("u_Cubemap", cubemapFilter.getFilteredCubemapTexture())
                             .setTexture("u_DfgTexture", dfgTexture);
+            spawned = true;
         } catch (IOException e) {
             Log.e(TAG, "Failed to read a required asset file", e);
             messageSnackbarHelper.showError(this, "Failed to read a required asset file: " + e);
