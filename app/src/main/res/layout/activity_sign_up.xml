@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#12123c"
+    android:background="#FFF9C4"
     tools:context=".signUpActivity">
 
     <TextView
@@ -14,7 +14,7 @@
         android:text="  Create an Account  "
         android:textStyle="bold"
         android:textSize="22sp"
-        android:textColor="#FFF"
+        android:textColor="#000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -61,7 +61,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#808080"
+                    android:backgroundTint="#FFE082"
                     android:textSize="15sp"
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +76,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
                 android:textColorHint="#808080"
-                android:background="#accbee"
+                android:background="#FFE082"
                 app:layout_constraintTop_toBottomOf="@+id/layout_first_name"
                 >
 
@@ -89,7 +89,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#808080"
+                    android:backgroundTint="#FFE082"
                     android:textSize="15sp"
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -103,7 +103,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
-                android:background="#accbee"
+                android:background="#FFE082"
                 android:textColorHint="#808080"
                 app:layout_constraintTop_toBottomOf="@+id/layout_last_name"
                 >
@@ -117,7 +117,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#808080"
+                    android:backgroundTint="#FFE082"
                     android:textSize="15sp"
                     android:inputType="textEmailAddress"
                     />
@@ -132,7 +132,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
-                android:background="#accbee"
+                android:background="#FFE082"
                 android:textColorHint="#808080"
                 app:layout_constraintTop_toBottomOf="@+id/layout_email"
                 >
@@ -146,7 +146,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#808080"
+                    android:backgroundTint="#FFE082"
                     android:textSize="15sp"
                     android:inputType="textPassword"
                     />
@@ -161,7 +161,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
-                android:background="#accbee"
+                android:background="#FFE082"
                 android:textColorHint="#808080"
                 app:layout_constraintTop_toBottomOf="@+id/layout_password"
                 >
@@ -175,7 +175,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#808080"
+                    android:backgroundTint="#FFE082"
                     android:textSize="15sp"
                     android:inputType="textPassword"
                     />
@@ -192,7 +192,7 @@
                 android:text="Sign Up"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
-                android:background="#3644c9"
+                android:background="#FFAB00"
                 android:textAllCaps="false"
                 android:layout_marginTop="30dp"
                 app:layout_constraintWidth_percent="0.7"
