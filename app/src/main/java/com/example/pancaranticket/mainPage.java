@@ -82,6 +82,39 @@ public class mainPage extends AppCompatActivity {
                         }
                     }
                 });
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.firstFragment);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch(menuItem.getItemId()){
+                    case R.id.firstFragment:
+                        return true;
+                    case R.id.secondfragment:
+                        startActivity(new Intent(getApplicationContext()
+                                , historytest.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.thirdFragment:
+                        startActivity(new Intent(getApplicationContext()
+                                , ThirdFragment.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.forthFragment:
+                        startActivity(new Intent(getApplicationContext()
+                                , ForthFragment.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
     }
 
 

@@ -16,14 +16,17 @@
         android:theme="@style/Theme.PancaranTicket.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".historytest"
+            android:exported="true" />
+        <activity
             android:name=".mainPage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".signUpActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".loginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SelectLogin"
             android:exported="true">
@@ -36,15 +39,11 @@
         <activity
             android:name=".BillPlz"
             android:exported="true" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <meta-data
             android:name="com.google.ar.core"

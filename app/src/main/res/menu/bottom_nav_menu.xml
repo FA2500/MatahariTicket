@@ -7,7 +7,7 @@
 
     </item>
 
-    <item android:id="@+id/second_fragment"
+    <item android:id="@+id/secondfragment"
         android:title="History"
         android:icon="@drawable/ic_baseline_book_24">
 
