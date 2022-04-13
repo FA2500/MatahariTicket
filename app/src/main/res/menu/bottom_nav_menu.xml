@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/firstFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24">
+
+    </item>
+
+    <item android:id="@+id/second_fragment"
+        android:title="History"
+        android:icon="@drawable/ic_baseline_home_24">
+
+    </item>
+
+    <item android:id="@+id/thirdFragment"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_home_24">
+
+    </item>
+
+    <item android:id="@+id/forthFragment"
+        android:title="Book Now"
+        android:icon="@drawable/ic_baseline_directions_bus_24">
+
+    </item>
+
+</menu>
