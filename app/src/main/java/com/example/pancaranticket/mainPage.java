@@ -73,7 +73,7 @@ public class mainPage extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        bottomNavigationView.setSelectedItemId(R.id.firstFragment);
+        bottomNavigationView.setSelectedItemId(R.id.book);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
