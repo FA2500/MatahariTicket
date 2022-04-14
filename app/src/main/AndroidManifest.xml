@@ -16,8 +16,14 @@
         android:theme="@style/Theme.PancaranTicket.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".historytest"
-            android:exported="true" />
+            android:name=".Page.homePage"
+            android:exported="false" />
+        <activity
+            android:name=".Page.userPage"
+            android:exported="false" />
+        <activity
+            android:name=".Page.historyPage"
+            android:exported="false" />
         <activity
             android:name=".mainPage"
             android:exported="true" />
@@ -39,11 +45,9 @@
         <activity
             android:name=".BillPlz"
             android:exported="true" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.ar.core"

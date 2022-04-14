@@ -17,6 +17,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.pancaranticket.Page.historyPage;
+import com.example.pancaranticket.Page.homePage;
+import com.example.pancaranticket.Page.userPage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,33 +39,17 @@ public class mainPage extends AppCompatActivity {
     private TextView WelcomeText;
     private NavigationBarView botNav;
 
-    //final
-    /*final Fragment HomeFrag = new FirstFragment();
-    final Fragment HistFrag = new SecondFragment();
-    final Fragment UserFrag = new ThirdFragment();
-    final Fragment TickFrag = new ForthFragment();
-    final FragmentManager fm = getSupportFragmentManager();
-    Fragment active = TickFrag;*/
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main_page);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        /*fm.beginTransaction().add(R.id.fragmentContainerView,HomeFrag).hide(HomeFrag).commit();
-        fm.beginTransaction().add(R.id.fragmentContainerView,HistFrag).hide(HistFrag).commit();
-        fm.beginTransaction().add(R.id.fragmentContainerView,UserFrag).hide(UserFrag).commit();
-        fm.beginTransaction().add(R.id.fragmentContainerView,TickFrag).commit();*/
-
-
+        setContentView(R.layout.activity_main);
+        //binding = ActivityMainBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
 
         db.collection("User")
                 .get()
@@ -93,21 +80,22 @@ public class mainPage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch(menuItem.getItemId()){
-                    case R.id.firstFragment:
-                        return true;
-                    case R.id.secondfragment:
+                    case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , historytest.class));
+                                , homePage.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.thirdFragment:
+                    case R.id.history:
                         startActivity(new Intent(getApplicationContext()
-                                , ThirdFragment.class));
+                                , historyPage.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.forthFragment:
-                        startActivity(new Intent(getApplicationContext()
-                                , ForthFragment.class));
+                    case R.id.book:
+                        startActivity(new Intent(getApplicationContext(), mainPage.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), userPage.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
