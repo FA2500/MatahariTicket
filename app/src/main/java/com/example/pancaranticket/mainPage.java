@@ -34,6 +34,7 @@ public class mainPage extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private int counter = 0;
 
     //from XML
     private TextView WelcomeText;
@@ -46,29 +47,11 @@ public class mainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //binding = ActivityMainBinding.inflate(getLayoutInflater());
-        //setContentView(binding.getRoot());
+        initialize();
+        counter = counter + 1;
+        Log.d("TESTCOUNTER","COUNTER = "+counter);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        db.collection("User")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                if(document.getData().get("email").toString().equals(userInfo.getEmail()))
-                                {
-                                    setUserInfo(document);
-                                    initialize();
-                                }
-                            }
-                        } else {
-                            Log.w("ERROR", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -111,21 +94,8 @@ public class mainPage extends AppCompatActivity {
         WelcomeText = findViewById(R.id.textView4);
         WelcomeText.setText("Welcome, "+ userInfo.getUsername()+"!");
 
-        botNav = findViewById(R.id.bottomNavigationView);
-        botNav.setSelectedItemId(R.id.forthFragment);
-
-
-
-
     }
 
-    private void setUserInfo(QueryDocumentSnapshot doc)
-    {
-        userInfo.setFullname(doc.getData().get("fullname").toString());
-        userInfo.setUsername(doc.getData().get("username").toString());
-        userInfo.setRole(doc.getData().get("role").toString());
 
-        Log.d("TESTINFO",userInfo.getEmail()+" "+userInfo.getUsername()+" "+userInfo.getFullName());
-    }
 
 }

@@ -6,17 +6,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.pancaranticket.R;
 import com.example.pancaranticket.mainPage;
+import com.example.pancaranticket.userInfo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class userPage extends AppCompatActivity {
+
+    private TextView fullnametv;
+    private TextView emailtv;
+    private TextView usernametv;
+    private TextView roletv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_page);
+        initialize();
+        //
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -50,6 +59,19 @@ public class userPage extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void initialize()
+    {
+        fullnametv = findViewById(R.id.fullNameTV);
+        emailtv = findViewById(R.id.emailTV);
+        usernametv = findViewById(R.id.usernameTV);
+        roletv = findViewById(R.id.roleTV);
+
+        fullnametv.setText("Full name = "+ userInfo.getFullName());
+        emailtv.setText("Email = "+ userInfo.getEmail());
+        usernametv.setText("Username = "+ userInfo.getUsername());
+        roletv.setText("Role = "+ userInfo.getRole());
     }
 
 

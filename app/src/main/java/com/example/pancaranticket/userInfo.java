@@ -28,12 +28,12 @@ public class userInfo {
 
     public static String getUsername()
     {
-        return email;
+        return username;
     }
 
     public static void setUsername(String user)
     {
-        email = user;
+        username = user;
     }
 
     public static String getRole()

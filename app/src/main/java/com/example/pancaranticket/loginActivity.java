@@ -21,6 +21,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,6 +95,7 @@ public class loginActivity extends AppCompatActivity {
             String password = etPassword.getText().toString();
 
 
+
             // Here you can call you API
             // Check this tutorial to call server api through Google Volley Library https://handyopinion.com
             mAuth.signInWithEmailAndPassword(email, password)
@@ -100,16 +104,30 @@ public class loginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(loginActivity.this,"Login Successfull",Toast.LENGTH_SHORT).show();
-                                /*FirebaseUser user = mAuth.getCurrentUser();
-                                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-                                FirebaseDatabase db = FirebaseDatabase.getInstance("https://ict602-group-project-default-rtdb.asia-southeast1.firebasedatabase.app");
-                                String userID = currentFirebaseUser.getUid();
-                                DatabaseReference ref = db.getReference("register").child(userID);*/
 
-                                userInfo.setEmail(email);
+                                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                                db.collection("User")
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if (task.isSuccessful()) {
+                                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                                        if(document.getData().get("email").toString().equals(email))
+                                                        {
+                                                            setUserInfo(document);
+                                                            Intent intent = new Intent(loginActivity.this,mainPage.class);
+                                                            startActivity(intent);
+                                                        }
+                                                    }
+                                                } else {
+                                                    Log.w("ERROR", "Error getting documents.", task.getException());
+                                                }
+                                            }
+                                        });
                                 //test
-                                Intent intent = new Intent(loginActivity.this,mainPage.class);
-                                startActivity(intent);
+
                                 //end data
                             }
                             else{
@@ -117,8 +135,20 @@ public class loginActivity extends AppCompatActivity {
                             }
                         }
                     });
+
+
         }
 
+    }
+
+    private void setUserInfo(QueryDocumentSnapshot doc)
+    {
+        userInfo.setFullname(doc.getData().get("fullname").toString());
+        userInfo.setEmail(doc.getData().get("email").toString());
+        userInfo.setUsername(doc.getData().get("username").toString());
+        userInfo.setRole(doc.getData().get("role").toString());
+
+        Log.d("TESTINFO",userInfo.getEmail());
     }
 
     public void goToSignup(View v) {
