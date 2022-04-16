@@ -92,10 +92,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/calibri"
                     android:maxLines="1"
-<<<<<<< Updated upstream
                     android:onClick="goToDestination"
-=======
->>>>>>> Stashed changes
                     android:text="Destination"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
