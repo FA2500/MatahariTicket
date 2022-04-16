@@ -94,15 +94,15 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="24sp"
+                    android:background="?attr/colorPrimary"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/gotham"
-                    android:layout_marginBottom="24sp"
                     android:text="ACCOUNT INFO"
+                    android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:background="?attr/colorPrimary"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -118,12 +118,12 @@
                     android:id="@+id/fullNameTV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16sp"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
                     android:text="MOHAMAD DANISH FAZWAN BIN MOHD ROSOLIZA"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="16sp"/>
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -139,12 +139,12 @@
                     android:id="@+id/emailTV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16sp"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
                     android:text="fzwnmd@gmail.com"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="16sp"/>
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -160,12 +160,12 @@
                     android:id="@+id/usernameTV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginBottom="16sp"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
                     android:text="Juno"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="16sp"/>
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -213,5 +213,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/bt_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+
+        android:background="@color/red"
+        android:text="Logout"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

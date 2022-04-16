@@ -34,7 +34,16 @@
         <entry key="..\:/Users/Faris/AndroidStudioProjects/PancaranTicket/app/src/main/res/menu/settings_menu.xml" value="0.6173913043478261" />
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/drawable/buttonshape.xml" value="0.2075" />
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/drawable/ic_person_outline_white_24dp.xml" value="0.2075" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/activity_main.xml" value="0.25" />
+=======
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/drawable/logoutbutton.xml" value="0.203" />
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/activity_user_page.xml" value="0.33" />
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/arcamera.xml" value="0.2" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/cons.xml" value="0.2" />
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/fragment_first.xml" value="0.18297101449275363" />
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/fragment_forth.xml" value="0.18297101449275363" />
@@ -45,6 +54,7 @@
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/layout/j.xml" value="0.18297101449275363" />
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
         <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/menu/settings_menu.xml" value="0.2" />
+        <entry key="..\:/Users/TY Computers/Documents/GitHub/MatahariTicket/app/src/main/res/menu/userpage_settingmenu.xml" value="0.2" />
       </map>
     </option>
   </component>

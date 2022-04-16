@@ -17,7 +17,11 @@
     <style name="Theme.PancaranTicket.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+<<<<<<< Updated upstream
         <item name="colorOnPrimary">@color/Yellow</item>
+=======
+        <color name="red">#f71c08</color>
+>>>>>>> Stashed changes
     </style>
 
     <style name="Theme.PancaranTicket.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
