@@ -15,6 +15,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.pancaranticket.Page.historyPage;
@@ -25,10 +27,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.api.Page;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.example.pancaranticket.databinding.ActivityMainBinding;
+import com.example.pancaranticket.Page.destinationPage;
 
 public class mainPage extends AppCompatActivity {
 
@@ -39,6 +43,16 @@ public class mainPage extends AppCompatActivity {
     //from XML
     private TextView WelcomeText;
     private NavigationBarView botNav;
+
+    //BUtton
+    private Button destButton;
+    private Button privButton;
+    private Button dateButton;
+
+    //TextView
+    private TextView destTV;
+    private TextView privTv;
+    private TextView dateTv;
 
 
 
@@ -93,7 +107,24 @@ public class mainPage extends AppCompatActivity {
     {
         WelcomeText = findViewById(R.id.textView4);
         WelcomeText.setText("Welcome, "+ userInfo.getUsername()+"!");
+        destButton = findViewById(R.id.destinationButton);
+        privButton = findViewById(R.id.fromButton);
+        dateButton = findViewById(R.id.dateButton);
+        destTV = findViewById(R.id.destinationTV);
+        privTv = findViewById(R.id.fromTV);
+        dateTv = findViewById(R.id.dateTV);
 
+        if(userInfo.getDestination() != null)
+        {
+            destTV.setText(userInfo.getDestination());
+        }
+
+    }
+
+    public void goToDestination(View v)
+    {
+        Intent intent = new Intent(this, destinationPage.class);
+        startActivity(intent);
     }
 
 

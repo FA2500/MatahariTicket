@@ -91,16 +91,18 @@
                 android:textColorHint="#FF8A99AF">
 
                 <Button
+                    android:id="@+id/destinationButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:text="Destination"
                     android:maxLines="1"
+                    android:onClick="goToDestination"
+                    android:text="Destination"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
                 <TextView
-                    android:id="@+id/destination"
+                    android:id="@+id/destinationTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Destination"
@@ -117,17 +119,18 @@
                 android:textColorHint="#FF8A99AF">
 
                 <Button
+                    android:id="@+id/fromButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawableStart="@drawable/ic_baseline_location_on_24"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:text="From"
                     android:maxLines="1"
+                    android:text="From"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
                 <TextView
-                    android:id="@+id/from"
+                    android:id="@+id/fromTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="From"
@@ -144,16 +147,17 @@
                 android:textColorHint="#FF8A99AF">
 
                 <Button
+                    android:id="@+id/dateButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawablePadding="16dp"
                     android:fontFamily="@font/calibri"
-                    android:text="Select Date"
                     android:maxLines="1"
+                    android:text="Select Date"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
                 <TextView
-                    android:id="@+id/Pb"
+                    android:id="@+id/dateTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Date"

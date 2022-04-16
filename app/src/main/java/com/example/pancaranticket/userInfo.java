@@ -6,6 +6,10 @@ public class userInfo {
     private static String username;
     private static String role;
 
+    private static String destination;
+    private static String from;
+    private static String date;
+
     public static String getFullName()
     {
         return fullname;
@@ -45,5 +49,9 @@ public class userInfo {
     {
         role = user;
     }
+
+    public static String getDestination() { return destination; }
+
+    public static void setDestination(String user) { destination = user; }
 
 }

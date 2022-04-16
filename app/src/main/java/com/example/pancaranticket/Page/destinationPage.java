@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.example.pancaranticket.R;
 import com.example.pancaranticket.loginActivity;
 import com.example.pancaranticket.mainPage;
+import com.example.pancaranticket.userInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -98,6 +99,9 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
             {
                 Button b = (Button)v;
                 Log.d("TEST DISTRICT","DISTRICT = "+b.getText().toString());
+                userInfo.setDestination(b.getText().toString());
+                Intent intent = new Intent(destinationPage.this , mainPage.class);
+                startActivity(intent);
             }
         }
     }
