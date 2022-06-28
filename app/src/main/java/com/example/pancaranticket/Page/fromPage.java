@@ -47,7 +47,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_destination_page);
+        setContentView(R.layout.activity_from_page);
         layout = (LinearLayout) findViewById(R.id.linearLayout) ;
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         //layout2 = (LinearLayout) findViewById(R.id.linearLayout2);

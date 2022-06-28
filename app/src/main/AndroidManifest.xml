@@ -15,7 +15,7 @@
         android:theme="@style/Theme.PancaranTicket.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".fromPage"
+            android:name=".Page.fromPage"
             android:exported="false" />
         <activity
             android:name=".Page.destinationPage"
