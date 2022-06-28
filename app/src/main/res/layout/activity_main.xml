@@ -94,7 +94,7 @@
                     android:maxLines="1"
                     android:onClick="goToDestination"
                     android:text="Destination"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -120,7 +120,7 @@
                     android:fontFamily="@font/calibri"
                     android:maxLines="1"
                     android:text="From"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -145,7 +145,7 @@
                     android:fontFamily="@font/calibri"
                     android:maxLines="1"
                     android:text="Select Date"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -173,7 +173,7 @@
         android:fontFamily="@font/calibri"
         android:text="Search Buses"
         android:textAllCaps="false"
-        android:textColor="#000000"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
