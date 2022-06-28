@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFF9C4"
+    android:background="#BBDEFB"
     tools:context=".loginActivity">
 
 
@@ -59,7 +59,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#FFE082"
+                    android:backgroundTint="#64B5F6"
                     android:textSize="15sp"
                     android:inputType="textEmailAddress"
                     />
@@ -87,7 +87,7 @@
                     android:padding="10dp"
                     android:textColor="#000000"
                     android:textColorHint="#808080"
-                    android:backgroundTint="#FFE082"
+                    android:backgroundTint="#64B5F6"
                     android:textSize="15sp"
                     android:inputType="textPassword"
                     />

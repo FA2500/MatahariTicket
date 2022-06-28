@@ -13,7 +13,7 @@
             android:id="@+id/toolbar3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F4B11C"
+            android:background="#42A5F5"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
@@ -174,7 +174,7 @@
                         android:fontFamily="@font/calibri"
                         android:text="RM50.00"
                         android:textAlignment="textEnd"
-                        android:textColor="#f5a622"
+                        android:textColor="#0D47A1"
                         android:textSize="24sp"
                         android:textStyle="bold" />
                 </LinearLayout>
