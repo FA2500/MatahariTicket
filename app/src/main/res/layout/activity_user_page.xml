@@ -222,6 +222,7 @@
 
         android:background="@color/red"
         android:text="Logout"
+
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
