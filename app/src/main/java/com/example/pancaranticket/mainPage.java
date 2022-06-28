@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.pancaranticket.Page.fromPage;
 import com.example.pancaranticket.Page.historyPage;
 import com.example.pancaranticket.Page.homePage;
 import com.example.pancaranticket.Page.userPage;
@@ -118,6 +119,10 @@ public class mainPage extends AppCompatActivity {
         {
             destTV.setText(userInfo.getDestination());
         }
+        if(userInfo.getFrom() != null)
+        {
+            privTv.setText(userInfo.getFrom());
+        }
 
     }
 
@@ -129,7 +134,7 @@ public class mainPage extends AppCompatActivity {
 
     public void goToFrom(View v)
     {
-        Intent intent = new Intent(this, destinationPage.class);
+        Intent intent = new Intent(this, fromPage.class);
         startActivity(intent);
     }
 

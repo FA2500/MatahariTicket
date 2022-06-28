@@ -54,4 +54,8 @@ public class userInfo {
 
     public static void setDestination(String user) { destination = user; }
 
+    public static String getFrom() { return from; }
+
+    public static void setFrom(String user) { from = user ;}
+
 }

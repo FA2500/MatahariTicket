@@ -99,7 +99,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
             {
                 Button b = (Button)v;
                 Log.d("TEST DISTRICT","DISTRICT = "+b.getText().toString());
-                userInfo.setDestination(b.getText().toString());
+                userInfo.setFrom(b.getText().toString());
                 Intent intent = new Intent(fromPage.this , mainPage.class);
                 startActivity(intent);
             }
