@@ -18,7 +18,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorOnPrimary">@color/Yellow</item>
-        <color name="red">#f71c08</color>
     </style>
 
     <style name="Theme.PancaranTicket.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
