@@ -93,7 +93,7 @@
                     android:fontFamily="@font/calibri"
                     android:maxLines="1"
                     android:onClick="goToDestination"
-                    android:text="Destination"
+                    android:text="Select Destination"
                     android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
@@ -119,7 +119,8 @@
                     android:drawableStart="@drawable/ic_baseline_location_on_24"
                     android:fontFamily="@font/calibri"
                     android:maxLines="1"
-                    android:text="From"
+                    android:onClick="goToFrom"
+                    android:text="Select From"
                     android:textColor="@android:color/white"
                     android:textSize="16sp" />
 

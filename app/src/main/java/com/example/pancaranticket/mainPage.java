@@ -127,6 +127,14 @@ public class mainPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToFrom(View v)
+    {
+        Intent intent = new Intent(this, destinationPage.class);
+        startActivity(intent);
+    }
+
+
+
 
 
 }

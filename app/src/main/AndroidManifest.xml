@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PancaranTicket.NoActionBar"
-        tools:ignore="GoogleAppIndexingWarning" >
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".fromPage"
+            android:exported="false" />
         <activity
             android:name=".Page.destinationPage"
             android:exported="true" />
@@ -37,7 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".SelectLogin"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
