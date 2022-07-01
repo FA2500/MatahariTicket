@@ -2,6 +2,7 @@ package com.example.pancaranticket;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.customview.widget.Openable;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,6 +57,7 @@ public class mainPage extends AppCompatActivity {
     private TextView privTv;
     private TextView dateTv;
 
+    DrawerLayout drawerLayout;
 
 
 
@@ -103,6 +106,14 @@ public class mainPage extends AppCompatActivity {
         });
     }
 
+    public void ClickMenu(View view){
+        openDrawer(drawerLayout);
+    }
+
+    private static void openDrawer(DrawerLayout drawerLayout){
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
 
     private void initialize()
     {
@@ -114,6 +125,7 @@ public class mainPage extends AppCompatActivity {
         destTV = findViewById(R.id.destinationTV);
         privTv = findViewById(R.id.fromTV);
         dateTv = findViewById(R.id.dateTV);
+        drawerLayout = findViewById(R.id.bot_nav);
 
         if(userInfo.getDestination() != null)
         {
@@ -138,8 +150,15 @@ public class mainPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void ClickHistory(View view){
+        redirectActivity(this,historyPage.class);
+    }
 
-
+    private static void redirectActivity(Activity activity, Class aclass) {
+        Intent intent = new Intent(activity,aclass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+    }
 
 
 }
