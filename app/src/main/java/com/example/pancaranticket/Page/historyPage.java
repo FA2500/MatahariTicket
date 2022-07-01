@@ -9,7 +9,6 @@ import android.view.MenuItem;
 
 import com.example.pancaranticket.R;
 import com.example.pancaranticket.mainPage;
-import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -32,7 +31,7 @@ public class historyPage extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , homePage.class));
+                                , helpPage.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.history:

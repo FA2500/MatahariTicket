@@ -38,7 +38,7 @@ public class userPage extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , homePage.class));
+                                , helpPage.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.history:

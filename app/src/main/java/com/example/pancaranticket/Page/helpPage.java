@@ -11,12 +11,12 @@ import com.example.pancaranticket.R;
 import com.example.pancaranticket.mainPage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class homePage extends AppCompatActivity {
+public class helpPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_help_page);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -29,7 +29,7 @@ public class homePage extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , homePage.class));
+                                , helpPage.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.history:

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page.helpPage"
+    android:background="#d3d3d3">
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#42A5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/bus_ic"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:layout_marginLeft="10dp"
+                android:paddingVertical="5dp"
+                android:text="Adik Beradik"
+                android:textColor="@color/red"
+                android:textSize="25dp"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Need help with this trip?"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_ViewIssues" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/bt_ViewIssues"
+        app:layout_constraintStart_toStartOf="@+id/bt_ViewIssues"
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/bus_ic"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Seremban"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"></TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_baseline_arrow_right_alt_24"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Kuala Terengganu"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:text="FRI 01 JULY, 2022"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:text="ADIK BERADIK EKSPRESS"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/bt_viewBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/booking_ic"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:drawablePadding="16dp"
+        android:text="View all bookings"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/bt_ViewIssues"
+        app:layout_constraintStart_toStartOf="@+id/bt_ViewIssues"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+    </Button>
+
+    <Button
+        android:id="@+id/bt_ViewIssues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:drawableLeft="@drawable/ic_baseline_report_problem_24"
+        android:drawablePadding="16dp"
+        android:text="View all issues"
+        android:textColor="@color/white"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/cardView3"
+        app:layout_constraintStart_toStartOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"  />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Other topics"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/bt_viewBooking"
+        app:layout_constraintTop_toBottomOf="@+id/bt_viewBooking" />
+
+    <Button
+        android:id="@+id/bt_bookingHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/ic_baseline_bus_alert_24"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:text="New bus booking help"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/bt_viewBooking"
+        app:layout_constraintStart_toStartOf="@+id/bt_viewBooking"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"></Button>
+
+    <Button
+        android:id="@+id/bt_offer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Offers"
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:drawableLeft="@drawable/ic_baseline_local_offer_24"
+        app:layout_constraintEnd_toEndOf="@+id/bt_bookingHelp"
+        app:layout_constraintStart_toStartOf="@+id/bt_bookingHelp"
+        app:layout_constraintTop_toBottomOf="@+id/bt_bookingHelp"></Button>
+
+    <Button
+        android:id="@+id/bt_refund"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Refundable Upgrade"
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:drawableLeft="@drawable/ic_baseline_account_balance_wallet_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bt_offer"
+        app:layout_constraintTop_toBottomOf="@+id/bt_offer"></Button>
+
+    <Button
+        android:id="@+id/bt_busPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Bus Pass"
+        android:drawableLeft="@drawable/ic_baseline_account_balance_wallet_24"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bt_refund"
+        app:layout_constraintTop_toBottomOf="@+id/bt_refund"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

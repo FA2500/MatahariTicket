@@ -3,14 +3,8 @@ package com.example.pancaranticket;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
-import androidx.customview.widget.Openable;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,18 +17,11 @@ import android.widget.TextView;
 
 import com.example.pancaranticket.Page.fromPage;
 import com.example.pancaranticket.Page.historyPage;
-import com.example.pancaranticket.Page.homePage;
+import com.example.pancaranticket.Page.helpPage;
 import com.example.pancaranticket.Page.userPage;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.pancaranticket.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.navigation.NavigationView;
-import com.google.api.Page;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.example.pancaranticket.databinding.ActivityMainBinding;
 import com.example.pancaranticket.Page.destinationPage;
 
 public class mainPage extends AppCompatActivity {
@@ -83,7 +70,7 @@ public class mainPage extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , homePage.class));
+                                , helpPage.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.history:
