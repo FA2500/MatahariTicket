@@ -45,6 +45,16 @@ public class loginActivity extends AppCompatActivity {
         viewInitializations();
     }
 
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            getFireData(currentUser.getEmail());
+        }
+    }
+
     void viewInitializations() {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
@@ -139,6 +149,31 @@ public class loginActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private void getFireData(String email)
+    {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("User")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if(document.getData().get("email").toString().equals(email))
+                                {
+                                    setUserInfo(document);
+                                    Intent intent = new Intent(loginActivity.this,mainPage.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        } else {
+                            Log.w("ERROR", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
     }
 
     private void setUserInfo(QueryDocumentSnapshot doc)

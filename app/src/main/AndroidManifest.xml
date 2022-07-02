@@ -10,7 +10,7 @@
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="AB eBus"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.PancaranTicket.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
@@ -31,15 +31,15 @@
             android:exported="false" />
         <activity
             android:name=".mainPage"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".signUpActivity"
-            android:exported="true" />
+            android:exported="false" />
+        <activity
+            android:name=".trip"
+            android:exported="false" />
         <activity
             android:name=".loginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SelectLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

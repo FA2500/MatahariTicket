@@ -7,7 +7,9 @@ public class userInfo {
     private static String role;
 
     private static String destination;
+    private static String destinationState;
     private static String from;
+    private static String fromState;
     private static String date;
 
     public static String getFullName()
@@ -57,5 +59,17 @@ public class userInfo {
     public static String getFrom() { return from; }
 
     public static void setFrom(String user) { from = user ;}
+
+    public static String getDate() { return date; }
+
+    public static void setDate(String user) { date = user ;}
+
+    public static String getDestinationState() { return destinationState ;}
+
+    public static void setDestinationState(String user) { destinationState = user ;}
+
+    public static String getFromState() { return fromState ;}
+
+    public  static void setFromState(String user) { fromState = user  ;}
 
 }

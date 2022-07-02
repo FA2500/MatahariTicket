@@ -81,7 +81,6 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
                     counter = 0;
                     buttonid = 0;
                     createStateButton();
-
                     break;
             }
         }
@@ -89,6 +88,8 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
         {
             if(v.getId() == i)
             {
+                Button b = (Button)v;
+                userInfo.setDestinationState(b.getText().toString());
                 Log.d("TEST ID","ID = "+v.getId());
                 createDistrictButton(StateM[i]);
             }
@@ -110,7 +111,7 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
     {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        db.collection("Location")
+        db.collection("From")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -142,17 +143,17 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference docRef = db.collection("Location").document(name);
+        DocumentReference docRef = db.collection("From").document(name);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    List<String> test = (List<String>) document.get("name");
+                    List<String> test = (List<String>) document.get("NAME");
                     if(test == null)
                     {
-                        createButton2(document.getData().get("name").toString());
-                        Log.d("DISTRICT"," "+document.getData().get("name").toString());
+                        Log.d("DISTRICT"," "+document.getData().get("NAME").toString());
+                        createButton2(document.getData().get("NAME").toString());
                     }
                     else
                     {

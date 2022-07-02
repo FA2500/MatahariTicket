@@ -172,6 +172,7 @@
             android:layout_margin="16dp"
             android:background="@drawable/buttonshape"
             android:fontFamily="@font/calibri"
+            android:onClick="goToBus"
             android:text="Search Buses"
             android:textAllCaps="false"
             android:textColor="@color/white"

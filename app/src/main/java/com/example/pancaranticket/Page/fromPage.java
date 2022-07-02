@@ -25,6 +25,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
+import java.util.Map;
 
 public class fromPage extends AppCompatActivity implements View.OnClickListener {
 
@@ -58,7 +59,9 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
         buttonBack = (Button) findViewById(R.id.backButton);
         buttonBack.setOnClickListener(this);
 
-        createStateButton();
+       // createStateButton();
+       // createStateButton2();
+        createDistrictButton();
 
     }
 
@@ -80,8 +83,9 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
                     layout.removeAllViews();
                     counter = 0;
                     buttonid = 0;
-                    createStateButton();
-
+                    //createStateButton();
+                   // createStateButton2();
+                    createDistrictButton();
                     break;
             }
         }
@@ -90,7 +94,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
             if(v.getId() == i)
             {
                 Log.d("TEST ID","ID = "+v.getId());
-                createDistrictButton(StateM[i]);
+                createDistrictButton();
             }
         }
         for(int i = 100; i < 112 ; i++)
@@ -106,35 +110,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-    private void createStateButton()
-    {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        db.collection("Location")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            //state
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-
-                                StateM[counter] = document.getId().toString();
-                                counter = counter + 1;
-                                createButton(document.getId());
-                                Log.d("DOC",document.getId());
-                                buttonid = buttonid + 1;
-                            }
-                        } else {
-                            Log.w("ERROR", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-    }
-
-
-
-    private void createDistrictButton(String name)
+    private void createStateButton2()
     {
         buttonState = 1;
         layout.removeAllViews();
@@ -142,14 +118,17 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference docRef = db.collection("Location").document(name);
+        DocumentReference docRef = db.collection("From/"+userInfo.getDestinationState()+"/To").document(userInfo.getDestination());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    List<String> test = (List<String>) document.get("name");
-                    if(test == null)
+                    //List<String> test = (List<String>) document.getData();
+                    //Map<String, Object> testt = document.getData();
+                    //Log.d("DOCUM ",document.getData().toString());
+
+                    /*if(test == null)
                     {
                         createButton2(document.getData().get("name").toString());
                         Log.d("DISTRICT"," "+document.getData().get("name").toString());
@@ -165,6 +144,76 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
                         }
 
                         Log.d("DISTRICT"," "+array);
+                    }*/
+                } else {
+                    Log.d("ERROR", "get failed with ", task.getException());
+                }
+            }
+        });
+    }
+
+    private void createStateButton()
+    {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("From/"+userInfo.getDestinationState()+"/To/")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            //state
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if(document.getId().toString().equals(userInfo.getDestination()))
+                                {
+                                    Log.d("DOCS", document.getData().toString());
+                                }
+                                StateM[counter] = document.getId().toString();
+                                counter = counter + 1;
+                                createButton(document.getId());
+                                Log.d("DOC",document.getId());
+                                buttonid = buttonid + 1;
+                            }
+                        } else {
+                            Log.w("ERROR", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+    }
+
+
+
+    private void createDistrictButton()
+    {
+        buttonState = 1;
+        layout.removeAllViews();
+        buttonid2 = 100;
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        DocumentReference docRef = db.collection("From/"+userInfo.getDestinationState()+"/To").document(userInfo.getDestination());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    List<String> test = (List<String>) document.get("NAME");
+                    if(test == null)
+                    {
+                        createButton2(document.getData().get("NAME").toString());
+                        Log.d("DISTRICT"," "+document.getData().get("NAME").toString());
+                    }
+                    else
+                    {
+                        String[] array = test.toArray(new String[0]);
+
+                        for(int i = 0 ; i < array.length ; i++)
+                        {
+                            createButton2(array[i]);
+                            buttonid2 = buttonid2 + 1;
+                            Log.d("DISTRICT"," "+array[i]);
+                        }
+
+
                     }
                 } else {
                     Log.d("ERROR", "get failed with ", task.getException());
