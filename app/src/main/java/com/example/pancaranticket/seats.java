@@ -19,9 +19,9 @@ public class seats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2d_seats_main);
 
-        //Intent intent = getIntent();
-        //map = intent.getParcelableExtra("map");
-        //Log.d("MAP", map.toString());
+        Intent intent = getIntent();
+        map = (Map) intent.getSerializableExtra("map");
+        Log.d("MAP", map.toString());
 
 
     }

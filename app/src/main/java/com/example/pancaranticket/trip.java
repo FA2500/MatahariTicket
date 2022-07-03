@@ -35,6 +35,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -96,11 +97,15 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
     @Override
     public void onClick(View v)
     {
+        Log.d("BTN CLICKED"," "+v.getId());
+        Log.d("BTN COUNTER"," "+counter);
         if(v.getId() != R.id.imageButton) //Back Button
         {
-            int sum = counter - v.getId();
+            int sum = v.getId() ;
+            sum = sum - 10;
+            int count = 1000 + sum;
             Intent intent = new Intent(this,seats.class);
-            //intent.putExtra("map", (Parcelable) map[v.getId()]);
+            intent.putExtra("map", (HashMap) map[count]);
             startActivity(intent);
         }
     }
