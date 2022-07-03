@@ -11,7 +11,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar3"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#42A5F5"
             android:minHeight="?attr/actionBarSize"
@@ -31,13 +31,12 @@
             app:layout_constraintTop_toTopOf="parent"></ImageButton>
 
         <ImageView
-            android:id="@+id/background"
+            android:id="@+id/imageView5"
             android:layout_width="0dp"
             android:layout_height="260dp"
             android:scaleType="centerCrop"
             android:src="@drawable/header"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar3">
 
@@ -47,80 +46,79 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/calibri"
             android:text="Destination"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintStart_toEndOf="@+id/textView7" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="16dp"
             android:fontFamily="@font/gotham"
             android:text="Pickup Point"
             android:textColor="@color/white"
             android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="29dp"
             android:fontFamily="@font/gotham"
             android:text="Destination"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
             android:layout_weight="10"
             android:src="@drawable/ic_baseline_swap_horiz_24"
             app:layout_constraintEnd_toStartOf="@+id/textView8"
             app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/gotham"
             android:text="30 - April - 2022 | Saturday"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="4dp"
             app:cardUseCompatPadding="true"
             app:contentPadding="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView9">
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -183,14 +181,15 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="4dp"
             app:cardUseCompatPadding="true"
             app:contentPadding="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/background">
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
 
 
             <LinearLayout
@@ -382,13 +381,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:background="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3d3" />
 
                     </LinearLayout>
 
@@ -402,13 +401,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3d3" />
 
                     </LinearLayout>
 
@@ -442,13 +441,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                     </LinearLayout>
 
@@ -462,13 +461,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -501,13 +500,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -521,13 +520,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                     </LinearLayout>
 
@@ -560,13 +559,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                     </LinearLayout>
 
@@ -580,13 +579,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -619,13 +618,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                     </LinearLayout>
 
@@ -639,13 +638,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/your_seat_img" />
+                            android:src="@color/Yellow" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -678,13 +677,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -698,13 +697,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -737,13 +736,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -757,13 +756,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                     </LinearLayout>
 
@@ -796,13 +795,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -816,13 +815,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2"/>
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                     </LinearLayout>
 
@@ -855,13 +854,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
@@ -875,13 +874,13 @@
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="4dp"
-                            android:src="@drawable/booked_img2" />
+                            android:src="@color/red" />
 
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="4dp"
-                            android:src="@drawable/available_img" />
+                            android:src="#d3d3d3" />
 
                     </LinearLayout>
 
