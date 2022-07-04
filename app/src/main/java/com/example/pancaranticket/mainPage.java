@@ -126,13 +126,13 @@ public class mainPage extends AppCompatActivity {
         drawerLayout = findViewById(R.id.bot_nav);
 
 
-        if(userInfo.getDestination() != null)
-        {
-            destTV.setText(userInfo.getDestination());
-        }
         if(userInfo.getFrom() != null)
         {
-            privTv.setText(userInfo.getFrom());
+            destTV.setText(userInfo.getFrom());
+        }
+        if(userInfo.getDestination() != null)
+        {
+            privTv.setText(userInfo.getDestination());
         }
         if(userInfo.getDate() != null)
         {
@@ -153,8 +153,16 @@ public class mainPage extends AppCompatActivity {
 
     public void goToFrom(View v)
     {
-        Intent intent = new Intent(this, fromPage.class);
-        startActivity(intent);
+        if(userInfo.getFrom() == null)
+        {
+            Toast.makeText(this, "Please select your from first", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Intent intent = new Intent(this, fromPage.class);
+            startActivity(intent);
+        }
+
     }
 
     public void goToBus(View v)

@@ -1,5 +1,6 @@
 package com.example.pancaranticket;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -21,12 +22,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.res.ResourcesCompat;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
 public class seats extends AppCompatActivity implements View.OnClickListener {
 
     private Map map;
+
+    //TV
+    private TextView destTV;
+    private TextView pickTV;
+    private TextView dateTV;
+
+    private TextView priceTV;
+    private TextView timeTV;
+    private TextView typeTV;
+    private TextView plateTV;
 
     //ly
     private LinearLayout ll;
@@ -56,6 +68,9 @@ public class seats extends AppCompatActivity implements View.OnClickListener {
     //int
     private int usercounter = 0;
 
+    //double
+    private double price = 0;
+
     //array
     private int[] userseats = new int[150];
 
@@ -65,7 +80,7 @@ public class seats extends AppCompatActivity implements View.OnClickListener {
 
         Intent intent = getIntent();
         map = (Map) intent.getSerializableExtra("map");
-        //Log.d("MAP", map.toString());
+        Log.d("MAP", map.toString());
 
         initial();
 
@@ -89,6 +104,8 @@ public class seats extends AppCompatActivity implements View.OnClickListener {
             v.setContentDescription(status[2]);
             userseats[usercounter] = v.getId() ;
             usercounter++;
+            price = price + (double) map.get("PRICE");
+            priceTV.setText("RM"+String.format("%.2f",price ));
         }
         else if( v.getContentDescription() == status[0] )
         {
@@ -99,12 +116,33 @@ public class seats extends AppCompatActivity implements View.OnClickListener {
             v.setBackground(avail);
             v.setContentDescription(status[1]);
             usercounter--;
+            price = price - (double) map.get("PRICE");
+            priceTV.setText("RM"+String.format("%.2f",price ));
         }
     }
 
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     void initial()
     {
+
         ll = findViewById(R.id.llview);
+        pickTV = findViewById(R.id.textView7);
+        destTV = findViewById(R.id.textView8);
+        dateTV = findViewById(R.id.textView9);
+
+        pickTV.setText(userInfo.getFrom());
+        destTV.setText(userInfo.getDestination());
+        dateTV.setText(userInfo.getDate());
+
+        priceTV = findViewById(R.id.priceTV);
+        timeTV = findViewById(R.id.timeTV);
+        typeTV = findViewById(R.id.typeTV);
+        plateTV = findViewById(R.id.plate);
+
+        priceTV.setText("RM"+String.format("%.2f",price ));
+        timeTV.setText((String) map.get("DEPARTING"));
+        typeTV.setText("VIP");
+        plateTV.setText("TSE 1409");
 
         llparam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT , LinearLayout.LayoutParams.WRAP_CONTENT , 100 );
         llparam.setMargins(0,0,0,8);
@@ -256,4 +294,20 @@ public class seats extends AppCompatActivity implements View.OnClickListener {
         lilr2.addView(btn4,imgparam2);
 
     }
+
+    public void goBack(View view)
+    {
+        Intent intent = new Intent(this,mainPage.class);
+        startActivity(intent);
+    }
+
+    public void goPay(View v)
+    {
+        Intent intent = new Intent(this,BillPlz.class);
+        intent.putExtra("total", price);
+        intent.putExtra("seat", usercounter);
+        startActivity(intent);
+    }
+
+
 }

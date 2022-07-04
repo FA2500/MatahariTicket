@@ -103,7 +103,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
             {
                 Button b = (Button)v;
                 Log.d("TEST DISTRICT","DISTRICT = "+b.getText().toString());
-                userInfo.setFrom(b.getText().toString());
+                userInfo.setDestination(b.getText().toString());
                 Intent intent = new Intent(fromPage.this , mainPage.class);
                 startActivity(intent);
             }
@@ -190,7 +190,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference docRef = db.collection("From/"+userInfo.getDestinationState()+"/"+ userInfo.getDestination()).document("TO");
+        DocumentReference docRef = db.collection("From/"+userInfo.getFromState()+"/"+ userInfo.getFrom()).document("TO");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

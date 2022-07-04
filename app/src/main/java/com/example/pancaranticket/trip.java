@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,6 +51,7 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
     private TextView DestTV;
     private TextView FromTV;
     private TextView DateTV;
+    private TextView queryTV;
     //TV
 
     //CL
@@ -79,6 +81,9 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
     //Map
     private Map[] map;
     private int counter = 1000;
+    
+    //bool
+    private Boolean isEmpty = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,12 +91,17 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
         setContentView(R.layout.trips);
 
         //Remove for production
-        FakeData();
+       // FakeData();
 
         Initialization();
         initUI();
 
         getData();
+        if(isEmpty)
+        {
+            queryTV.setText("Bus isn't available today.Choose another date");
+            Toast.makeText(this, "No Bus avaiable right now", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -131,10 +141,12 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
         DestTV = findViewById(R.id.textView8);
         FromTV = findViewById(R.id.textView7);
         DateTV = findViewById(R.id.textView9);
+        queryTV = findViewById(R.id.queryTV);
 
         DestTV.setText(userInfo.getDestination());
         FromTV.setText(userInfo.getFrom());
         DateTV.setText(userInfo.getDate());
+        queryTV.setText("Searching for bus ticket.Please wait");
 
         bg = findViewById(R.id.background);
 
@@ -354,22 +366,28 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
     void getData()
     {
         //ONLY VALID FOR ONE INSTANCE
-        /*FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference docRef = db.collection("FROM/"+userInfo.getFrom()+"/"+userInfo.getDate()).document(userInfo.getDestination());
+        DocumentReference docRef = db.collection("From/"+userInfo.getFromState()+"/"+userInfo.getFrom()+"/TO/"+userInfo.getDestination()).document(userInfo.getDate());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful())
                 {
                     DocumentSnapshot document = task.getResult();
-                    if(document != null)
+                    if(document.getData() != null)
                     {
-                        Log.d("Ticket"," "+ Objects.requireNonNull(document.getData()));
+                        queryTV.setText("");
+                        Log.d("DOCUMENT", String.valueOf(document.getData()));
+                        isEmpty = false;
+                        createCard(document.getData());
+                        map[counter] = document.getData();
+                        counter++;
                     }
                     else
                     {
-                        Log.d("Ticket","EMPTY");
+                        Toast.makeText(trip.this, "No bus available right now. Choose another date", Toast.LENGTH_SHORT).show();
+                        queryTV.setText("No bus available right now");
                     }
                 }
                 else
@@ -377,32 +395,39 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
                     Log.d("ERROR", "get failed with ", task.getException());
                 }
             }
-        });*/
+        });
 
+        /*
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        db.collection("FROM/"+userInfo.getFrom()+"/"+userInfo.getDate())
+        db.collection("FROM/"+userInfo.getFromState()+"/"+userInfo.getFrom()+"/"+userInfo.getDate())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             //state
+
                             for (QueryDocumentSnapshot document : task.getResult())
                             {
                                 if(document.getId().contains(userInfo.getDestination()))
                                 {
+                                    isEmpty = false;
                                     createCard(document.getData());
                                     map[counter] = document.getData();
                                     counter++;
+                                    queryTV.setText("");
                                 }
                                 //Log.d("DOC", String.valueOf(document.getData()));
                             }
+
                         } else {
-                            Log.w("ERROR", "Error getting documents.", task.getException());
+                            //Log.w("ERROR", "Error getting documents.", task.getException());
+                            Toast.makeText(trip.this, "Error getting ticket information", Toast.LENGTH_SHORT).show();
+                            queryTV.setText("Error getting ticket information.");
                         }
                     }
-                });
+                });*/
     }
 
     public void goBack(View view)

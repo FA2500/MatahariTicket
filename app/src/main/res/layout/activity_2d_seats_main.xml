@@ -27,6 +27,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
+            android:onClick="goBack"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></ImageButton>
 
@@ -44,16 +45,19 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_width="134dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/calibri"
+            android:gravity="center"
             android:text="Destination"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView7"
-            app:layout_constraintStart_toEndOf="@+id/textView7" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/toolbar3"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
         <TextView
             android:id="@+id/textView7"
@@ -133,6 +137,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/timeTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/calibri"
@@ -141,6 +146,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/typeTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -151,6 +157,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/plate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/calibri"
@@ -167,6 +174,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/priceTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/calibri"
@@ -1424,6 +1432,19 @@
 
 
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/gopay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goPay"
+            android:text="Pay"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar3"
+            app:layout_constraintVertical_bias="0.294" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

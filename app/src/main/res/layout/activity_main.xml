@@ -80,14 +80,14 @@
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:drawableLeft="@drawable/ic_baseline_my_location_24"
+                        android:drawablePadding="10dp"
                         android:fontFamily="@font/calibri"
                         android:maxLines="1"
                         android:onClick="goToDestination"
-                        android:text="Select Destination"
+                        android:text="SELECT FROM"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:drawableLeft="@drawable/ic_baseline_location_city_24"
-                        android:drawablePadding="10dp"/>
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/destinationTV"
@@ -109,15 +109,14 @@
                         android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:drawableLeft="@drawable/ic_baseline_location_city_24"
+                        android:drawablePadding="10dp"
                         android:fontFamily="@font/calibri"
                         android:maxLines="1"
                         android:onClick="goToFrom"
-                        android:text="Select From"
+                        android:text="SELECT DESTINATION"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:drawableLeft="@drawable/ic_baseline_my_location_24"
-                        android:drawablePadding="10dp"
-                        />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/fromTV"

@@ -89,7 +89,7 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
             if(v.getId() == i)
             {
                 Button b = (Button)v;
-                userInfo.setDestinationState(b.getText().toString());
+                userInfo.setFromState(b.getText().toString());
                 Log.d("TEST ID","ID = "+v.getId());
                 createDistrictButton(StateM[i]);
             }
@@ -100,7 +100,7 @@ public class destinationPage extends AppCompatActivity implements View.OnClickLi
             {
                 Button b = (Button)v;
                 Log.d("TEST DISTRICT","DISTRICT = "+b.getText().toString());
-                userInfo.setDestination(b.getText().toString());
+                userInfo.setFrom(b.getText().toString());
                 Intent intent = new Intent(destinationPage.this , mainPage.class);
                 startActivity(intent);
             }
