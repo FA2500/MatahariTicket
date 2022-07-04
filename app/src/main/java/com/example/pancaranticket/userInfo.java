@@ -11,6 +11,7 @@ public class userInfo {
     private static String from;
     private static String fromState;
     private static String date;
+    private static String rdate;
 
     public static String getFullName()
     {
@@ -70,6 +71,10 @@ public class userInfo {
 
     public static String getFromState() { return fromState ;}
 
-    public  static void setFromState(String user) { fromState = user  ;}
+    public static void setFromState(String user) { fromState = user  ;}
+
+    public static String getRdate() { return rdate ;}
+
+    public static void setRdate(String user) { rdate = user ;}
 
 }

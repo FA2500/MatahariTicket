@@ -225,9 +225,9 @@ public class trip extends AppCompatActivity implements View.OnClickListener  {
                         tv1.setTextColor(Color.BLACK);
                         tr1.addView(tv1, trparam);
 
-                        TextView tv2 = new TextView(this);
+                       /* TextView tv2 = new TextView(this);
                         tv2.setText(data.get("ETA").toString());
-                        tr1.addView(tv2, trparam);
+                        tr1.addView(tv2, trparam);*/
 
                         TextView tv3 = new TextView(this);
                         tv3.setText(data.get("VACANT").toString() + " SEATS");

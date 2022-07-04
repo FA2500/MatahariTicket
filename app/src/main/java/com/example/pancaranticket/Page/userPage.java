@@ -3,6 +3,7 @@ package com.example.pancaranticket.Page;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -61,6 +62,7 @@ public class userPage extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void initialize()
     {
         fullnametv = findViewById(R.id.fullNameTV);

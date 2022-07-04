@@ -40,7 +40,21 @@
             android:exported="false" />
         <activity
             android:name=".trip"
+<<<<<<< Updated upstream
             android:exported="false" />
+        <activity
+            android:name=".loginActivity"
+            android:exported="true">
+            <intent-filter>
+=======
+            android:exported="false">
+            <!--<intent-filter>
+>>>>>>> Stashed changes
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
         <activity
             android:name=".loginActivity"
             android:exported="true">
@@ -49,21 +63,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--<activity
-            android:name=".loginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<<<<<<< Updated upstream
         </activity>-->
         <!--<activity
+=======
+        </activity>
+        <activity
+>>>>>>> Stashed changes
             android:name=".BillPlz"
             android:exported="true" />
 
-        <meta-data
+        <!--<meta-data
             android:name="com.google.ar.core"
             android:value="required" />
 

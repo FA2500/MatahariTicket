@@ -49,6 +49,7 @@ public class mainPage extends AppCompatActivity {
     private TextView destTV;
     private TextView privTv;
     private TextView dateTv;
+    private TextView rdateTv;
 
     DrawerLayout drawerLayout;
     private DatePickerDialog datePickerDialog;
@@ -120,7 +121,10 @@ public class mainPage extends AppCompatActivity {
         destTV = findViewById(R.id.destinationTV);
         privTv = findViewById(R.id.fromTV);
         dateTv = findViewById(R.id.dateTV);
+        rdateTv = findViewById(R.id.dateReturnTV);
+        rdateTv.setText("OPTIONAL RETURN");
         drawerLayout = findViewById(R.id.bot_nav);
+
 
         if(userInfo.getDestination() != null)
         {
@@ -133,6 +137,10 @@ public class mainPage extends AppCompatActivity {
         if(userInfo.getDate() != null)
         {
             dateTv.setText(userInfo.getDate());
+        }
+        if(userInfo.getRdate() != null)
+        {
+            rdateTv.setText(userInfo.getRdate());
         }
 
     }

@@ -190,7 +190,7 @@ public class fromPage extends AppCompatActivity implements View.OnClickListener 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        DocumentReference docRef = db.collection("From/"+userInfo.getDestinationState()+"/To").document(userInfo.getDestination());
+        DocumentReference docRef = db.collection("From/"+userInfo.getDestinationState()+"/"+ userInfo.getDestination()).document("TO");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
