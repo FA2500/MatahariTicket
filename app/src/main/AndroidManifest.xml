@@ -40,6 +40,9 @@
             android:exported="false" />
         <activity
             android:name=".trip"
+            android:exported="false" />
+        <activity
+            android:name=".loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,7 +59,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>-->
-        <activity
+        <!--<activity
             android:name=".BillPlz"
             android:exported="true" />
 
@@ -73,7 +76,7 @@
 
         <meta-data
             android:name="com.google.ar.core"
-            android:value="required" />
+            android:value="required" />-->
     </application>
 
 </manifest>
